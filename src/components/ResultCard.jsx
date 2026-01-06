@@ -1,9 +1,7 @@
-import React from "react";
-
 const ResultCard = ({ item }) => {
   return (
-    <div className="w-[17.5vw] h-80 bg-white rounded">
-      <div className="h-full">
+    <div className="w-[17.5vw] relative h-80 bg-white rounded-lg overflow-hidden">
+      <a href={item.url} className="h-full" target="_blank">
         {item.type == "photo" ? (
           <img
             className="h-full w-full object-cover object-center"
@@ -33,8 +31,18 @@ const ResultCard = ({ item }) => {
         ) : (
           ""
         )}
+      </a>
+      <div
+        id="bottom"
+        className="flex justify-between gap-3 items-center w-full px-4 py-6 absolute bottom-0 text-white"
+      >
+        <h2 className="font-semibold capitalize h-12 overflow-hidden">
+          {item.title}
+        </h2>
+        <button className="bg-indigo-600 text-white active:scale-95 rounded px-3 py-2 font-medium cursor-pointer">
+          Save
+        </button>
       </div>
-      <h1 className="text-black">{item.title}</h1>
     </div>
   );
 };

@@ -31,6 +31,7 @@ const ResultGrid = () => {
               title: item.alt_description,
               thumbnail: item.urls.small,
               src: item.urls.full,
+              url: item.links.html,
             }));
           }
           if (activeTab == "videos") {
@@ -41,6 +42,7 @@ const ResultGrid = () => {
               title: item.user.name || "video",
               thumbnail: item.image,
               src: item.video_files[0].link,
+              url: item.url,
             }));
           }
           if (activeTab == "gif") {
@@ -51,6 +53,7 @@ const ResultGrid = () => {
               title: item.title || "GIF",
               thumbnail: item.media_formats.tinygif.url,
               src: item.media_formats.gif.url,
+              url: item.url,
             }));
           }
           dispatch(setResults(data));
