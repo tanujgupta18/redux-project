@@ -70,7 +70,7 @@ const ResultGrid = () => {
   if (loading) return <h1>Loading...</h1>;
 
   return (
-    <div className="flex justify-center w-full flex-wrap gap-5 px-10 overflow-auto">
+    <div className="flex justify-between w-full flex-wrap gap-6 px-10 py-6 overflow-auto">
       {results.map((item, idx) => {
         return (
           <div key={idx}>
